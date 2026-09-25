@@ -1,0 +1,275 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 80px;
+    gap: 40px;
+    font-family: 'Space Mono';
+    background-color: #c5e4e7;
+}
+
+main {
+    width: min(920px, calc(100% - 32px));
+    min-height: 480px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding: 32px;
+    background-color: white;
+    border-radius: 24px;
+    box-shadow: 0 16px 32px rgb(0 71 75 / 0.12);
+}
+
+main > section:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px;
+    color: white;
+    background-color: #00474b;
+    border-radius: 16px;
+}
+
+main > section:last-child > div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+main > section:last-child output {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  color: #26c2ae;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+main > section:last-child h2,
+main > section:last-child p {
+    margin: 0;
+}
+
+main > section:last-child h2 {
+    font-size: 16px;
+}
+
+main section:last-child p {
+    font-size: 13px;
+    color: #7ff97f;
+}
+
+#reset {
+    margin-top: auto;
+    height: 48px;
+    border-radius: 8px;
+    border: 0;
+    border-radius: 8px;
+    background-color: #26c2ae;
+    color: #00474b;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#reset:active {
+  transform: scale(0.92);
+}
+
+
+
+button[data-tip] {
+    background-color: #00474b;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3 px solid #26c2ae;
+    outline-offset: 3px;
+}
+
+main > section:first-child > div:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+main > section:first-child > div:nth-child(2) h2 {
+    grid-column:  1 / -1;
+}
+
+main > section:first-child > div:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+main > section:first-child label {
+    color: #5e7a7d;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#custom-tip {
+    width: 100%;
+    min-height: 0;
+    height: 40px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #f3f9fa;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.bill-field {
+    position: relative;
+}
+
+.bill-field img {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+
+}
+
+#bill {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px 0 40px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #f3f9fa;
+    color: #00474b;
+    font: 700 20px "Space Mono", monospace;
+    text-align: right;
+}
+
+
+.people-field {
+    position: relative;
+}
+
+.people-field img {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+#people {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px 0 40px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #f3f9fa;
+    color: #00474b;
+    font: 700 20px "Space Mono", monospace;
+    text-align: right;
+}
+
+button[data-tip],
+#custom-tip {
+    height: 48px;
+}
+
+
+
+
+button.is-selected {
+    background-color: #26c2ae;
+    color: #00474b;
+}
+
+@media (hover: hover) {
+    #reset:hover {
+        background-color: #26c2ae;
+        cursor: pointer;
+        
+    }
+}
+
+#reset:active {
+    background-color: #9fe8df;
+}
+
+@media (max-width: 700px) {
+
+    body {
+        gap: 0;
+    }
+
+    main {
+        width: 100%;
+        margin-top: 40px;
+        border-radius: 24px 24px 0 0;
+        grid-template-columns: 1fr;
+        min-height: 0;
+    }
+
+    main > section:first-child > div:nth-child(2) {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+
+    main > section:last-child output {
+        font-size: 32px;
+        letter-spacing: -1px;
+    }
+
+    main > section:last-child {
+        padding: 24px;
+    }
+
+    main section:last-child p {
+        color: #7ff97f;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution {
+        font-size: 0.6875rem;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
